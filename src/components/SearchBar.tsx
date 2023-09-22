@@ -1,8 +1,8 @@
 "use client";
 
+import { SearchBarProps } from "@/types";
 import { SearchManufacturer } from ".";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 import React, { useState } from "react";
 
@@ -20,15 +20,15 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
   );
 };
 
-function SearchBar({setManufacturer, setModel}) {
+function SearchBar({ setManufacturer, setModel }: SearchBarProps) {
   const [searchManufacturer, setSearchManufacturer] = useState("");
   const [searchModel, setSearchModel] = useState("");
-  const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!searchManufacturer || !searchModel) return alert("Please fill in the search bar");
+    if (!searchManufacturer || !searchModel)
+      return alert("Please fill in the search bar");
 
     setModel(searchModel);
     setManufacturer(searchManufacturer);
