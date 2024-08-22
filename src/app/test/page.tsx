@@ -1,3 +1,5 @@
+import Client from "./Client";
+
 export type CharactersResJSON = Character[];
 
 export type Character = {
@@ -45,6 +47,6 @@ export default async function Test() {
   console.log("characters :",characters);
 
   return (
-   <p>test route</p>
+   <Client characters={characters}/>
   );
 }
